@@ -2,3 +2,26 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.FilterButton {
+  display: none;
+}
+
+.DesktopView {
+  display: block;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .FilterButton {
+    display: block;
+  }
+
+  .DesktopView {
+    display: none;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+}
