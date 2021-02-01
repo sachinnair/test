@@ -14,7 +14,7 @@ function filterFunc(searchTxt, provinceList, sortyBy, cityObj, index, cities) {
   return (
     (!searchTxt || matchedCity) &&
     (!provinceList.length || provinceList.includes(cityObj.admin_name)) &&
-    (sortyBy !== "distance" || cityObj.distance < 30)
+    (sortyBy !== "distance" || cityObj.distance < 7800)
   );
 }
 

@@ -75,11 +75,7 @@ export default ({ searchHandler, provinceList, toggleView, hideMobile }) => {
         </FormControl>
         <FormControl variant="filled" className={classes.formControl}>
           <InputLabel id="sel_province">Sort By</InputLabel>
-          <Select
-            labelId="sel_province"
-            ref={selectRef}
-            defaultValue={queryParams.sortBy}
-          >
+          <Select labelId="sel_province" ref={selectRef} defaultValue="city">
             <MenuItem value="city">City Name</MenuItem>
             <MenuItem value="population">Population</MenuItem>
             <MenuItem value="distance">GeoLocation</MenuItem>
@@ -88,11 +84,7 @@ export default ({ searchHandler, provinceList, toggleView, hideMobile }) => {
         </FormControl>
         <FormControl variant="filled" className={classes.formControl}>
           <InputLabel id="sel_sortOrder">Sort Order</InputLabel>
-          <Select
-            labelId="sel_sortOrder"
-            ref={sortOrderRef}
-            defaultValue={queryParams.sortOrder}
-          >
+          <Select labelId="sel_sortOrder" ref={sortOrderRef} defaultValue="asc">
             <MenuItem value="asc">Ascending</MenuItem>
             <MenuItem value="desc">Descending</MenuItem>
           </Select>
