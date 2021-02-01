@@ -14,7 +14,7 @@ function filterFunc(searchTxt, provinceList, sortyBy, cityObj, index, cities) {
   return (
     (!searchTxt || matchedCity) &&
     (!provinceList.length || provinceList.includes(cityObj.admin_name)) &&
-    (sortyBy !== "distance" || cityObj.distance < 7800)
+    (sortyBy !== "distance" || cityObj.distance < 30)
   );
 }
 
@@ -35,7 +35,6 @@ Object.defineProperty(Object.prototype, "distance", {
           DistancesCache[JSON.stringify(currentPos)] = {};
         }
         DistancesCache[JSON.stringify(currentPos)][this.city] = computedDist;
-        console.log("[TRAKC]", computedDist);
 
         return computedDist || 0;
       }
@@ -67,8 +66,6 @@ export default ({ onProvinceFilter, showList }) => {
         queryParamConsumer.sortBy
       )
     );
-
-    console.log("[CHECK THIS]", filteredList);
 
     const templateList = quickSortRecursive(
       queryParamConsumer.sortBy,
