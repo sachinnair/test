@@ -12,7 +12,8 @@ export function fetchCurrentPos() {
         ); */
       },
       function (e) {
-        resolve({ lng: "6.4088", lat: "53.251" });
+        console.log('Taking Random Point');
+        resolve({ lng: 6.4088, lat: 53.25 });
       }
     );
   })
